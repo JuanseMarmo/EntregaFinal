@@ -1,0 +1,39 @@
+{% extends "AppCoder/padre.html" %}
+{% load static %}
+
+        {% block contenido5 %}
+        <br>
+            <h3>Ingrese los datos de su vehiculo</h3>
+            <h5>Obtenga la mejor Cotizacion</h5>
+            
+
+        {% endblock %}
+
+        {% block contenido %}
+
+            {% if VFormulario.errors %}
+
+            <p>Datos Erroneos</p>
+
+            {% endif %}
+            <br>
+            <form action="/AppCoder/vender" method="POST">{% csrf_token %} 
+
+                
+
+                <table>
+
+                {{  VFormulario.as_table  }}
+
+                </table>
+
+                <br>
+                <input type="submit" value="Enviar">
+
+                
+
+            </form> 
+
+
+
+        {%endblock%}

@@ -1,0 +1,27 @@
+{% extends "AppCoder/padre.html" %}
+{% load static %}
+    {% block contenido %}
+        
+        {% for c in camiones %}
+            
+            <li> {{ c }} </li>
+            
+            <button>
+
+                <a href="{% url 'EliminarCamion' c.modelo %}">Eliminar</a>
+                
+
+            </button>
+            <button>
+                <a href="{% url 'EditarCamion' c.modelo %}">Editar</a>
+                
+
+            </button>
+            <br>
+
+        {% endfor %}
+
+        <!-- <a href="{% url camionFormulario.html"> Agregar camion </a>  REVISAR -->
+
+    {% endblock %}
+

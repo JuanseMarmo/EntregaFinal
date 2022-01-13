@@ -1,0 +1,38 @@
+{% extends "AppCoder/padre.html" %}
+
+
+{% load static %}
+    
+        {% block contenido7 %}
+        <br>
+            <h3>FORMULARIO CAMION</h3>
+            <h5>Ingrese los datos de su camion:</h5>
+        {% endblock %}
+
+        {% block contenido8 %}
+            
+            {% if miCamion.errors %}
+
+            <p>Error</p>
+
+            {% endif %}
+            
+            <br>
+
+            <form action="/AppCoder/camionFormulario/" method="POST" >  {% csrf_token %}            
+                
+                <table>
+
+                    {{ miCamion.as_table }}
+
+                </table>
+
+                <br>
+
+                <input type="submit" value="Enviar Datos">
+            
+            </form>
+
+        
+        {% endblock %}
+

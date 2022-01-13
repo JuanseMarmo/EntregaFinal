@@ -1,0 +1,37 @@
+{% extends "AppCoder/padre.html" %}
+
+
+{% load static %}
+
+        {% block contenido %}
+            <h1> Lista de motos </h1>
+        {% endblock %}
+
+
+        {% block contenido12 %}
+
+            <p>Acá tenemos todos los motos:</p> <br>
+            <ul>
+                {% for moto in object_list %}
+                <li>
+
+                    <p>Marca: {{moto.marca}}</p>
+                    <p>Modelo: {{moto.modelo}}</p>
+
+                    <p>
+                    <a href="{% url 'Detail' moto.id %}">Ver más</a>
+                    <a href="{% url 'Edit' moto.id %}">Editar</a>
+                    <a href="{% url 'Delete' moto.id %}">Borrar</a>
+
+                    </p>
+
+                </li>
+
+                {% endfor %}
+
+
+
+            </ul>
+
+
+        {% endblock %}

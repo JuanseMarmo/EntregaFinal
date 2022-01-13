@@ -1,0 +1,35 @@
+{% extends "AppCoder/padre.html" %}
+
+
+{% load static %}
+    
+        {% block contenido7 %}
+        <br>
+            <h3>FORMULARIO MOTO</h3>
+        {% endblock %}
+
+        {% block contenido8 %}
+            
+            {% if miMoto.errors %}
+
+            <p>Error</p>
+
+            {% endif %}
+            <br>
+            <form action="/AppCoder/motoFormulario/" method="POST" >  {% csrf_token %}            
+                
+                <table>
+
+                    {{ miMoto.as_table }}
+
+                </table>
+
+                <br>
+
+                <input type="submit" value="Enviar Datos">
+            
+            </form>
+
+        
+        {% endblock %}
+

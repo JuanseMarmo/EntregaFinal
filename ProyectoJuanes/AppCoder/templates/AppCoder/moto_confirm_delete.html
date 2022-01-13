@@ -1,0 +1,26 @@
+{% extends "AppCoder/padre.html" %}
+
+
+{% load static %}
+
+        {% block contenido %}
+            <h1>Desea Eliminar</h1>
+        {% endblock %}
+
+
+        {% block contenido11 %}
+
+
+            <form method="post"> {% csrf_token %}
+
+                Estas seguro??? --->  "{{ object }}"
+
+                <input type="submit" value="Eliminar" />
+
+
+
+            </form>
+
+        
+
+        {% endblock %}

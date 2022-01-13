@@ -1,0 +1,30 @@
+{% extends "AppCoder/padre.html" %}
+
+
+{% load static %}
+
+    {% block contenido %}
+
+        <h1>Buscando vehiculo...</h1>
+        <br>
+
+        {% if autos %}
+
+            <ul>
+            {% for auto in autos %}
+            
+            <li><h5>MARCA</h5> {{auto.marca}}</li>
+            <li><h5>MODELO</h5> {{auto.modelo}}</li>
+            <li><h5>AÑO</h5> {{auto.anio}}</li>
+            <br>
+            <br>
+            
+            {% endfor %}
+            </ul>
+
+        {% endif %}
+    
+    {% endblock %}
+
+
+

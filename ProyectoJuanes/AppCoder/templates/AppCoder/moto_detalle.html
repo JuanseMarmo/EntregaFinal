@@ -1,0 +1,24 @@
+{% extends "AppCoder/padre.html" %}
+
+
+{% load static %}
+
+        {% block contenido %}
+            <h1> Detalle de la moto </h1>
+        {% endblock %}
+
+
+        {% block contenido10 %}
+
+            <p>Marca de la moto: <i> {{ moto.marca }}</i></p>
+            <p>Modelo de la moto: <i> {{ moto.modelo }}</i></p>
+            <p>Anio de la moto: <i> {{ moto.anio }}</i></p>
+
+            <p>
+
+                <a href="{% url 'List' %}">Regresar</a>
+
+            </p>
+
+
+        {% endblock %}
